@@ -13,6 +13,7 @@ namespace CSharpShop2
         private string nome;
         private string descrizione;
         private float prezzo;
+        private float prezzoConIva;
         private int iva;
         // STATO
         // COSTRUTTORI
@@ -73,11 +74,15 @@ namespace CSharpShop2
         // METODI PUBBLICI
         public string StampaProdotto()
         {
-            string stringaProdotto = ""
-                
-                
-                ;
-
+            this.prezzoConIva = this.CalcoloPrezzoConIva(this.prezzo, this.iva);
+            string stringaProdotto = "\n------------------- Prodotto ---------------------\n" +
+                "\nCodice: \t\t" + $"{this.codice:00000000}" +
+                "\nNome: \t\t\t" + this.nome +
+                "\nDescrizione: \t\t" + this.descrizione +
+                "\nPrezzo senza IVA: \t" + $"{this.prezzo:0.##}" + "€" +
+                "\nIVA: \t\t\t" + this.iva + "%" +
+                "\nPrezzo con IVA: \t" + $"{prezzoConIva:0.##}" + "€" +
+                "\n\n--------------------------------------------------";
             return stringaProdotto;
         }
         // METODI PRIVATI
