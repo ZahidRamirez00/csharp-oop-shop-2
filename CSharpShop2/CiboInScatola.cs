@@ -28,7 +28,14 @@ namespace CSharpShop2
 
         public void SetPesoScatola(int PesoScatola)
         {
-            this.pesoScatola = PesoScatola;
+            if (PesoScatola > 0)
+            {
+                this.pesoScatola = PesoScatola;
+            }
+            else
+            {
+                Console.WriteLine("Hai inserito un valo non valido!!");
+            }
         }
 
         public void SetAperto(bool Aperto)

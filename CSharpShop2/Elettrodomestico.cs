@@ -28,11 +28,29 @@ namespace CSharpShop2
 
         public void SetPesoElettrodomestico(int PesoElettrodomestico)
         {
-            this.pesoElettrodomestico = PesoElettrodomestico;
+            if(PesoElettrodomestico > 0) 
+            { 
+                this.pesoElettrodomestico = PesoElettrodomestico;
+            }
+            else
+            {
+                Console.WriteLine("Hai inserito un valore non valido!!");
+            }
         }
 
         public void SetClasseEnergetica(string ClasseEnergetica)
         {
+            switch (ClasseEnergetica)
+            {
+                case "A": this.classeEnergetica = ClasseEnergetica; break;
+                case "B": this.classeEnergetica = ClasseEnergetica; break;
+                case "C": this.classeEnergetica = ClasseEnergetica; break;
+                case "D": this.classeEnergetica = ClasseEnergetica; break;
+                case "E": this.classeEnergetica = ClasseEnergetica; break;
+                case "F": this.classeEnergetica = ClasseEnergetica; break;
+                case "G": this.classeEnergetica = ClasseEnergetica; break;
+                default: Console.WriteLine("Hai inserito un valore non valido!!"); break;
+            }
             this.classeEnergetica = ClasseEnergetica;
         }
 
