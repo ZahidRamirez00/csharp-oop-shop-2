@@ -72,18 +72,17 @@ namespace CSharpShop2
             this.iva = Iva;
         }
         // METODI PUBBLICI
-        public string StampaProdotto()
+        public virtual void StampaProdotto()
         {
             this.prezzoConIva = this.CalcoloPrezzoConIva(this.prezzo, this.iva);
-            string stringaProdotto = "\n------------------- Prodotto ---------------------\n" +
+            string stringaProdotto = "\n\n------------------- Prodotto ---------------------\n" +
                 "\nCodice: \t\t" + $"{this.codice:00000000}" +
                 "\nNome: \t\t\t" + this.nome +
                 "\nDescrizione: \t\t" + this.descrizione +
                 "\nPrezzo senza IVA: \t" + $"{this.prezzo:0.##}" + "€" +
                 "\nIVA: \t\t\t" + this.iva + "%" +
-                "\nPrezzo con IVA: \t" + $"{prezzoConIva:0.##}" + "€" +
-                "\n\n--------------------------------------------------";
-            return stringaProdotto;
+                "\nPrezzo con IVA: \t" + $"{prezzoConIva:0.##}" + "€";
+            Console.WriteLine(stringaProdotto);
         }
         // METODI PRIVATI
         public float CalcoloPrezzoConIva(float prezzo, int iva)
